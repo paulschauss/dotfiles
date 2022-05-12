@@ -23,6 +23,17 @@
   dt  = difftool
   stat = !git --no-pager diff --stat
 
+  # Output the current branch name
+  get-branch = !git rev-parse --abbrev-ref HEAD
+
+  # Shortcut to push to the current branch and set it to track the upstream branch.
+  publish = !git push -u origin $(git get-branch)
+
+  # Shortcut to add, commit and push in one command.
+  rocket = "!f() { \
+        git add . && git commit -m \"$1\" && $(git publish); \
+      }; f"
+
   # Clean merged branches
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
 
@@ -50,5 +61,10 @@
 [pull]
   rebase = false
 [user]
-	email = p+github@schauss.fr
-	name = Paul Schauss
+	email = paul
+	name = schauss
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

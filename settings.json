@@ -64,7 +64,6 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
     "python.formatting.provider": "yapf",
     "python.pythonPath": "~/.pyenv/shims/python",
     "ruby.lint":
@@ -78,5 +77,18 @@
     "workbench.settings.editor": "json",
     "workbench.settings.openDefaultSettings": true,
     "workbench.settings.useSplitJSON": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": false,
+      "plaintext": true,
+      "markdown": false,
+      "ruby": true,
+      "javascript": false
+    },
+    "window.zoomLevel": -2
 }
