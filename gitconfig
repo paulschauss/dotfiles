@@ -61,8 +61,8 @@
 [pull]
   rebase = false
 [user]
-	email = paul
-	name = schauss
+	email = p+github@schauss.fr
+	name = paul schauss
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
